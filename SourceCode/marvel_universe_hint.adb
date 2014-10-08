@@ -126,6 +126,10 @@ begin
   --Edges := new Edge_Matrix'(1 .. N_Characters => (N_Characters + 1 .. N_Vertices => False));
   Edges := new Edge_Matrix (1 .. N_Characters, N_Characters + 1 .. N_Vertices);
   Edges.all := (others => (others => False));
+  -- Here is where I will create and initialize the collaboration matrix to keep
+  -- everything organized. by Kyle Ryan
+  Collaborations := new Collaboration_Matrix (1 .. N_Characters, 1 .. N_Characters); -- Notice: Size is 1 to 6486, 1 to 6486, a square matrix where the
+  -- starting point is (1, 1)
 
   -- Read and parse the vertex name lines and build the array of vertex names.
   declare
